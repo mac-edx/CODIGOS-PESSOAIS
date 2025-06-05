@@ -13,7 +13,7 @@ bool botao_clicado()
         sleep_ms(25);
     }
     return clicado;
-}*/
+}
 
 bool botao_pressionado()
 {
@@ -25,4 +25,4 @@ bool botao_pressionado()
     {
         return false;
     }
-}
+}*/

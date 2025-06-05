@@ -11,8 +11,8 @@ void principal()
    
     while (1)
     {
-        botao_pressionado();
-        if (botao_pressionado())
+        
+        if (gpio_get(botao) == 0)
         {
             valor = 0;
 
@@ -26,7 +26,7 @@ void principal()
                 sleep_us(1);
                 int bit = gpio_get(serialpin);
                 valor |= (bit << i);
-                gpio_put(clkpin, !clkpin);
+                gpio_put(clkpin, 1);
 
             }
             printf("valor: %u", valor);
