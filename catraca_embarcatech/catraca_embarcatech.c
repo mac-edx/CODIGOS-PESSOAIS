@@ -3,10 +3,10 @@
 #include "hardware/i2c.h"
 #include "hardware/adc.h"
 #include <stdio.h>
-#include "init.h"
-#include "botao.h"
-#include "display.h"
-
+#include "include/init.h"
+#include "include/botao.h"
+#include "include/display.h"
+mudanca = 1;
 void principal()
 {
 
