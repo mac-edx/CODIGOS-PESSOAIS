@@ -6,4 +6,7 @@
 
 bool botao_clicado(void);
 
+bool botao_pressionado(void);
+
+
 #endif

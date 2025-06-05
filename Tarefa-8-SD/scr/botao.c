@@ -13,3 +13,15 @@ bool botao_clicado()
     }
     return clicado;
 }
+
+bool botao_pressionado()
+{
+    if(gpio_get(botao) == 0)
+    {         
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

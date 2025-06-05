@@ -10,7 +10,7 @@ void principal()
     while (1)
     {
 
-        if (botao_clicado())
+        if (botao_pressionado())
         {
 
             gpio_put(latchpin, 0);
