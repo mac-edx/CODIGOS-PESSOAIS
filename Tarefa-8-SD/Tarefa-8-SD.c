@@ -9,7 +9,7 @@ void principal()
     uint8_t valor = 0;
     while (1)
     {
-
+        botao_pressionado();
         if (botao_pressionado())
         {
 
