@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 #include "include/init.h"
 #include "include/display.h"
@@ -23,6 +24,10 @@ void init_display() {
     clear_display(); // Limpa o display
 }
 
+void clear_display() {
+    ssd1306_clear(&disp);
+    ssd1306_show(&disp);
+}
 
 void print_texto(char *msg, uint pos_x, uint pos_y, uint scale)
 {

@@ -10,5 +10,7 @@
 #define PINO_SDA 15
 
 void init_display();
+void clear_display();
+void texto(uint8_t valor);
 
 #endif

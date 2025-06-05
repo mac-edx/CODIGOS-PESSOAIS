@@ -2,7 +2,7 @@
 #include "include/init.h"
 #include "include/botao.h"
 #include "include/display.h"
-mudanca = 1;
+int mudanca = 1;
 void principal()
 {
 
