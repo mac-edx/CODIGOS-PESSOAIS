@@ -35,7 +35,12 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Tarefa-8-SD Tarefa-8-SD.c )
+add_executable(Tarefa-8-SD Tarefa-8-SD.c 
+scr/botao.c
+scr/init.c
+scr/display.c
+inc/ssd1306.c
+)
 
 pico_set_program_name(Tarefa-8-SD "Tarefa-8-SD")
 pico_set_program_version(Tarefa-8-SD "0.1")
@@ -45,7 +50,7 @@ pico_generate_pio_header(Tarefa-8-SD ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(Tarefa-8-SD 0)
-pico_enable_stdio_usb(Tarefa-8-SD 0)
+pico_enable_stdio_usb(Tarefa-8-SD 1)
 
 # Add the standard library to the build
 target_link_libraries(Tarefa-8-SD
@@ -60,7 +65,9 @@ target_include_directories(Tarefa-8-SD PRIVATE
 target_link_libraries(Tarefa-8-SD 
         hardware_i2c
         hardware_pio
-        
+        hardware_adc
+        hardware_clocks
+        hardware_gpio
         )
 
 pico_add_extra_outputs(Tarefa-8-SD)
