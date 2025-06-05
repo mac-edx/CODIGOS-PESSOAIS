@@ -37,7 +37,6 @@ void print_texto(char *msg, uint pos_x, uint pos_y, uint scale)
 
 void texto(uint8_t valor)
 {
-
     char decimal[5];
     sprintf(decimal, "%u", valor);
     ssd1306_clear(&disp); // Limpa o display
