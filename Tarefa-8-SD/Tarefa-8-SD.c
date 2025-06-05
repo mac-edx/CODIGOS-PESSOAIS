@@ -3,15 +3,18 @@
 #include "include/botao.h"
 #include "include/display.h"
 
+ uint8_t valor = 0;
+
 void principal()
 {
 
-    uint8_t valor = 0;
+   
     while (1)
     {
         botao_pressionado();
         if (botao_pressionado())
         {
+            valor = 0;
 
             gpio_put(latchpin, 0);
             sleep_us(1); // pulso de latch
@@ -23,13 +26,12 @@ void principal()
                 sleep_us(1);
                 int bit = gpio_get(serialpin);
                 valor |= (bit << i);
+                gpio_put(clkpin, !clkpin);
 
-                gpio_put(clkpin, 1);
             }
-            printf("o codigo chega aqui!");
+            printf("valor: %u", valor);
+            texto(valor);
         }
-
-        texto(valor);
 
         sleep_ms(200);
     }
