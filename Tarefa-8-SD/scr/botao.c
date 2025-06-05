@@ -2,6 +2,7 @@
 #include "include/init.h"
 #include "include/botao.h"
 
+/*
 bool botao_clicado()
 {
     static int prev = 1;
@@ -12,7 +13,7 @@ bool botao_clicado()
         sleep_ms(25);
     }
     return clicado;
-}
+}*/
 
 bool botao_pressionado()
 {
