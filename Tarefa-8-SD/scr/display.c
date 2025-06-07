@@ -40,6 +40,6 @@ void texto(uint8_t valor)
     char decimal[5];
     sprintf(decimal, "%u", valor);
     ssd1306_clear(&disp); // Limpa o display
-    print_texto("Decimal: ", 0, 32, 1);
-    print_texto(decimal, 50, 32, 1);
+    print_texto("Valor D: ", 0, 10, 2);
+    print_texto(decimal, 100, 10, 2);
 }

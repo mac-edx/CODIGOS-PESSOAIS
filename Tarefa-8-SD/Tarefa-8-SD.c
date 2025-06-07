@@ -12,18 +12,21 @@ void principal()
     while (1)
     {
         
-        if (gpio_get(botao) == 0)
+        if (botao_clicado())
         {
             valor = 0;
 
             gpio_put(latchpin, 0);
-            sleep_us(1); // pulso de latch
+            gpio_put(clkpin, 0);
+            sleep_ms(100); // pulso de latch
+            gpi0_put(clkpin, 1);
+            sleep_ms(100);
             gpio_put(latchpin, 1);
-
+            
             for (int i = 0; i < 8; i++)
             {
                 gpio_put(clkpin, 0);
-                sleep_us(1);
+                sleep_ms(20);
                 int bit = gpio_get(serialpin);
                 valor |= (bit << i);
                 gpio_put(clkpin, 1);
